@@ -19,6 +19,10 @@ mongoose.connect('mongodb://localhost:27017/codeChallenge5');
 var indexRouter = require('../routers/index');
 app.use('/', indexRouter);
 
+// require and use indexRouter
+var superHeroRouter = require('../routers/superheroRouter.js');
+app.use('/', superHeroRouter);
+
 //require and use superheroRouter
 
 var server = app.listen(portDecision, function() {

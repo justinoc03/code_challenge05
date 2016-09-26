@@ -7,7 +7,7 @@ var heroModel = require('../models/superHeroModel.js');
 /////////////////Add New hero////////////////////////////////
 //remember that .post requires bodyParser because bodyParser takes the information from the DOM and processes it for the post
 //req.body is what is received FROM the client-side
-app.post('/addNewHero', function(req, res){
+router.post('/addNewHero', function(req, res){
   console.log('hit the .post addNewHero');
   console.log('request body', req.body);
 
@@ -35,3 +35,5 @@ app.post('/addNewHero', function(req, res){
     });
 
 });
+
+module.exports = router;
