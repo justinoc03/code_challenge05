@@ -7,6 +7,8 @@ var myApp = angular.module("myApp", ["ngRoute"]);
 myApp.controller( 'superController', [ '$scope', '$http', function( $scope, $http ){
   console.log( 'NG is sourced' );
 
+
+
 }]);
 
 myApp.config(["$routeProvider", function($routeProvider){

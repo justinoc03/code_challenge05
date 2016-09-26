@@ -1,17 +1,20 @@
 myApp.controller('viewSuperHeroesController', ['$scope', '$http' ,function($scope, $http){
 console.log('in viewSuperHeroesController');
 
+  $scope.showHeros = [];
 
   $scope.getHeros = function () {
+    console.log('in getHeros');
     $http({
       method: 'GET',
-      url: '/viewSuperHeroes'
+      url: '/getHeroes'
     }).then(function success(responseObject) {
       console.log('got these superheros from server=', responseObject);
-      $scope.getHeros = responseObject.data;
+      $scope.showHeros = responseObject.data;
     }, function error(errorObject){
       console.log(errorObject);
     });
+    console.log($scope.showHeros);
   };
 
 }]);//end viewSuperHeroesController

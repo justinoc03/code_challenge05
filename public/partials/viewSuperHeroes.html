@@ -1,0 +1,19 @@
+<h2>View all Supeheroes</h2>
+
+<div ng-controller="viewSuperHeroesController">
+
+  <div ng-init="getHeros()">
+  <div ng-repeat="x in showHeros">
+
+
+    <h4>Superhero Alias: {{x.alias}}</h4>
+    <h5>Superhero First Name (if-known): {{x.first_name}}</h5>
+    <h5>Superhero Last Name (if-known): {{x.last_name}}</h5>
+    <h5>Superhero Power: {{x.power_name}}</h5>
+    <h5>Superhero's City: {{x.city}}</h5>
+    <hr>
+
+    </div>
+  </div><!--end of repeat-->
+
+</div> <!--end of controller-->

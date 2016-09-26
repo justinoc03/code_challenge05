@@ -4,6 +4,24 @@ var router = express.Router();
 //require hero model
 var heroModel = require('../models/superHeroModel.js');
 
+/////////////////Get All Heroes////////////////////////////////
+router.get('/getHeroes', function(req, res){
+  console.log('in viewSuperHeroes');
+
+//use the name of the model to find something in the DB, NOT THE DB
+//this particular seach looks for ALL documents in the DB. You could narrow down the search in the find()
+  heroModel.find({}, function(err, heroResults) {
+    if(err){
+      console.log('error occurred:', err);
+      res.sendStatus(500);
+    }else{
+      res.send(heroResults);
+      console.log(heroResults);
+    }
+  });
+});
+
+
 /////////////////Add New hero////////////////////////////////
 //remember that .post requires bodyParser because bodyParser takes the information from the DOM and processes it for the post
 //req.body is what is received FROM the client-side
